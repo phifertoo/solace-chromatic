@@ -1,4 +1,3 @@
-// pages/api/users/index.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import admin from "@/utils/firebaseServer";
 import { authenticate } from "@/utils/authMiddleware";
@@ -12,16 +11,11 @@ export default async function handler(
 ) {
   try {
     const firebaseId = await authenticate(req);
-    // Proceed with your API logic here
     // res.status(200).json({ message: "You are authenticated", userId });
-
-    // const userId = typeof req.query.id === "string" ? req.query.id : "";
-    console.log(firebaseId);
     const { name, email, userId }: UserRequestBody = req.body;
 
     switch (req.method) {
       case "POST": {
-        // Basic validation
         if (!name || !email) {
           return res
             .status(400)
@@ -33,7 +27,6 @@ export default async function handler(
             name,
             email,
             firebaseId,
-            // Add other user fields as needed
           });
 
           return res
@@ -78,67 +71,6 @@ export default async function handler(
           });
         }
       }
-      //   try {
-      //     let querySnapshot;
-
-      //     if (userId) {
-      //       //set query snapshot data if the userId is passed in the body
-      //     } else {
-      //       querySnapshot = await db
-      //         .collection("users")
-      //         .where("firebaseId", "==", firebaseId)
-      //         .get();
-      //     }
-
-      //     if (querySnapshot?.empty) {
-      //       return res.status(404).json({ message: "User not found." });
-      //     }
-
-      //     // Assuming you're looking for a single user match
-      //     const userData = querySnapshot?.docs[0].data();
-      //     return res.status(200).json({
-      //       message: "User data",
-      //       data: userData as UserRequestBody,
-      //     });
-      //   } catch (error) {
-      //     console.error("Error getting user:", error);
-      //     return res.status(500).json({
-      //       message: "Error getting user",
-      //       error: error instanceof Error ? error.message : "",
-      //     });
-      //   }
-      // }
-      // case "GET": {
-      //   try {
-      //     let querySnapshot;
-
-      //     if (userId) {
-      //       //set query snapshot data if the userId is passed in the body
-      //     } else {
-      //       querySnapshot = await db
-      //         .collection("users")
-      //         .where("firebaseId", "==", firebaseId)
-      //         .get();
-      //     }
-
-      //     if (querySnapshot?.empty) {
-      //       return res.status(404).json({ message: "User not found." });
-      //     }
-
-      //     // Assuming you're looking for a single user match
-      //     const userData = querySnapshot?.docs[0].data();
-      //     return res.status(200).json({
-      //       message: "User data",
-      //       data: userData as UserRequestBody,
-      //     });
-      //   } catch (error) {
-      //     console.error("Error getting user:", error);
-      //     return res.status(500).json({
-      //       message: "Error getting user",
-      //       error: error instanceof Error ? error.message : "",
-      //     });
-      //   }
-      // }
 
       case "PUT": {
         if (!userId) {

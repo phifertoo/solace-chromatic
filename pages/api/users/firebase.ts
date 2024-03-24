@@ -1,4 +1,3 @@
-// pages/api/users/index.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import admin from "@/utils/firebaseServer";
 import { authenticate } from "@/utils/authMiddleware";

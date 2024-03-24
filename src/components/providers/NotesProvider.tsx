@@ -8,6 +8,7 @@ import React, {
 import { useAuth } from "./AuthProvider";
 import { fetchData } from "@/utils/api";
 import { INote } from "@/models/note";
+import { formatNoteData } from "@/utils/helpers";
 
 interface NotesContextType {
   notes: INote[];
@@ -48,12 +49,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
               method: "GET",
             }
           );
-          response.map((r: any, i: any) => {
-            response[i].updatedAt = new Date(
-              r.updatedAt._seconds * 1000 + r.updatedAt._nanoseconds / 1000000
-            );
-          });
-          setNotes(response);
+          formatNoteData(response, setNotes);
         } catch (err) {
           if (err instanceof Error) setError(err);
         }

@@ -1,4 +1,4 @@
-import { isValidContent } from "./helpers";
+import { isValidContent, formatNoteData } from "./helpers";
 
 describe("isValidContent", () => {
   test("returns true for empty string", () => {
@@ -27,5 +27,25 @@ describe("isValidContent", () => {
   test("returns true for content more than 300 characters", () => {
     const longContent: string = "a".repeat(301);
     expect(isValidContent(longContent)).toBe(true);
+  });
+});
+
+describe("formatNoteData", () => {
+  it("should format note data correctly", () => {
+    // Mock setNotes function
+    const setNotesMock = jest.fn();
+
+    // Sample response data
+    const response = [
+      {
+        id: "1",
+        content: "Sample content",
+        updatedAt: { _seconds: 1711268584, _nanoseconds: 907000000 },
+      },
+    ];
+
+    formatNoteData(response, setNotesMock);
+
+    expect(response[0].updatedAt).toEqual(new Date("2024-03-24T08:23:04.907Z"));
   });
 });

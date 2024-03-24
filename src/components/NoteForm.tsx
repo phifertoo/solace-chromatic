@@ -14,6 +14,7 @@ import { fetchData } from "@/utils/api";
 import { FormBody } from "@/models/form";
 import { useAuth } from "./providers/AuthProvider";
 import { useNotes } from "./providers/NotesProvider";
+import { formatNoteData } from "@/utils/helpers";
 
 const NoteForm: React.FC = () => {
   const {
@@ -50,7 +51,7 @@ const NoteForm: React.FC = () => {
         }
       );
       setValue("content", "");
-      setNotes(response);
+      formatNoteData(response, setNotes);
       setIsLoading(false);
       toast({
         title: "Note Created Successfully!",

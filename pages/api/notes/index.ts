@@ -1,7 +1,5 @@
-// src/pages/api/notes/index.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import admin from "../../../src/utils/firebaseServer"; // Ensure you're exporting both admin and db from firebaseAdmin.ts
-// import {app, db} from "@/utils/firebaseServer";
 import { authenticate } from "@/utils/authMiddleware";
 import { isValidContent } from "@/utils/helpers";
 
