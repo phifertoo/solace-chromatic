@@ -28,6 +28,7 @@ export const Note: React.FC<NoteProps> = ({
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   // Assuming note.updatedAt is an ISO string
+  console.log(note);
   const updatedDateTime = new Date(note.updatedAt).toLocaleString();
 
   return (

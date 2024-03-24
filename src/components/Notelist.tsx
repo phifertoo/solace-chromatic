@@ -14,7 +14,7 @@ const NoteList = () => {
     try {
       removeNote(noteId);
 
-      await fetchData(`http://localhost:3000/api/notes?noteId=${noteId}`, {
+      await fetchData(`http://localhost:3000/api/notes/${noteId}`, {
         method: "DELETE",
       });
 

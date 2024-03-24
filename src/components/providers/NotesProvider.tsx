@@ -50,8 +50,8 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
           );
           response.map((r: any, i: any) => {
             response[i].updatedAt = new Date(
-              r.updatedAt._seconds * 1000
-            ).toLocaleDateString();
+              r.updatedAt._seconds * 1000 + r.updatedAt._nanoseconds / 1000000
+            );
           });
           setNotes(response);
         } catch (err) {
