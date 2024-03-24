@@ -58,14 +58,12 @@ When a user signs in through the Google SSO, we check if there is a user with th
 
 For now, I have not implemented protected routes since there is only 1 page. If we were to scale this project, I would implement protected routes with redirects if the user is not authenticated.
 
-### Prerequisites
+## Running the application locally
 
 Before running the app, you need to have the following installed:
 
 - Node.js (v14.x or later)
 - npm (v6.x or later) or yarn (v1.x or later)
-
-### Installation
 
 1. Clone the repository to your local machine:
 
