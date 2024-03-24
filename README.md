@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1. Technology Stack
 
-## Getting Started
+The project utilizes the following technologies:
 
-First, run the development server:
+Typescript: The choice to use TypeScript over JavaScript in the project was driven by the need for enhanced code quality, improved developer productivity, and better scalability.
 
-```bash
-npm run dev
-# or
+Next.js: Chosen for its ease of setup, server-side rendering capabilities, and efficient development workflow. Next.js provides a solid foundation for building modern full stack applications with React on the front-end.
+
+Firebase Authentication: Firebase is used for authentication, specifically Google authentication. This decision was made for its simplicity, scalability, and robust authentication features.
+
+Chakra UI: Chakra UI is employed for building the user interface components. It offers a rich set of accessible and customizable UI components, enabling rapid development of aesthetically pleasing interfaces.
+
+2. Folder Structure
+
+The project follows a structured folder organization to maintain clarity and modularity:
+
+components: Contains reusable React components used throughout the application.
+
+pages: Houses backend endpoints with authentication.
+
+providers: Includes context providers for managing application state and providing data to components via React Context API.
+
+utils: Stores utility functions and helper modules used across the application. Also contains the Firebase authentication configuration.
+
+models: Defines TypeScript interfaces and types used for data modeling and type safety.
+
+3. Authentication Flow
+
+Firebase Authentication with Google provider is integrated into the application for user authentication. Users are authenticated using their Google accounts, ensuring a seamless and familiar login experience.
+
+4. State Management
+
+State management is primarily handled using React Context API provided by Next.js. Context providers are utilized to manage global application state and provide data to components where needed. This approach simplifies state management and ensures data consistency throughout the application.
+
+5. UI Design
+
+Chakra UI is chosen for its robust and customizable UI components, allowing for the creation of visually appealing and responsive user interfaces. The design focuses on simplicity, accessibility, and intuitive user experience.
+
+6. Testing Strategy
+
+The project incorporates unit tests for critical components and functionality using Jest and React Testing Library. Tests are written to ensure the correctness and reliability of application features, enhancing overall code quality and maintainability.
+
+### Prerequisites
+
+Before running the app, you need to have the following installed:
+
+- Node.js (v14.x or later)
+- npm (v6.x or later) or yarn (v1.x or later)
+
+### Installation
+
+1. Clone the repository to your local machine:
+
+2. Install dependencies
+
+npm install
+
+or
+
+yarn
+
+3. Create a new project in firebase
+
+4. Register app to firebase
+
+5. Enable Google Authentication for the project
+
+6. Generate a new private key in the Project Settings => Service Accounts
+
+7. Create a Firestore database
+
+8. Create a .env in the root. Copy the following values into the .env file from firebase.
+
+REACT_APP_FIREBASE_PRIVATE_KEY
+REACT_APP_FIREBASE_CLIENT_EMAIL
+REACT_APP_FIREBASE_PROJECT_ID
+REACT_APP_FIREBASE_API_KEY
+REACT_APP_FIREBASE_AUTH_DOMAIN
+REACT_APP_FIREBASE_STORAGE_BUCKET
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID
+REACT_APP_FIREBASE_APP_ID
+REACT_APP_FIREBASE_MEASUREMENT_ID
+
+9. Run server locally
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+10. To run test files, enable the babel.config.js file by removing the "disabled" from the file name. Then run yarn test <filename>
