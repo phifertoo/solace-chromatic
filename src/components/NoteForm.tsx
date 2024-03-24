@@ -38,7 +38,7 @@ const NoteForm: React.FC = () => {
         content: watch("content"),
         userId: currentUser?.id || "",
       };
-      const newUser = await fetchData("/api/notes", {
+      await fetchData("/api/notes", {
         method: "POST",
         body: notesBody,
       });
@@ -82,6 +82,9 @@ const NoteForm: React.FC = () => {
           mb={4}
           {...register("content", {
             validate: (value) => {
+              if (!currentUser) {
+                return "Please sign in";
+              }
               return (
                 (value.length >= 20 && value.length <= 200) ||
                 "Note must be between 20 and 200 characters."
