@@ -54,6 +54,10 @@ When a user creates a new note, all notes are requested to ensure all data is in
 
 When a user signs in through the Google SSO, we check if there is a user with the given email address. If not, we create a new user. If so, we fetch all the notes for the given user.
 
+## Form Validation
+
+When creating a new note or editing a new note, we validate that the string length is between 20 and 300 characters.
+
 ## Protected Routes
 
 For now, I have not implemented protected routes since there is only 1 page. If we were to scale this project, I would implement protected routes with redirects if the user is not authenticated.
