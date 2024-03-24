@@ -34,14 +34,12 @@ const Main: React.FC = () => {
             .
           </Text>
         </Box>
-
-        <Divider />
-
+        <Divider borderColor="gray.800" my={8} />
         <Box>
           <Title title="Write a New Note" />
           <NoteForm />
         </Box>
-
+        <Divider borderColor="gray.800" my={8} />
         <Box>
           <Title title="Your Notes" />
           {authLoading || isLoading ? (

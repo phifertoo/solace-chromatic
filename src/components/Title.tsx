@@ -5,7 +5,7 @@ const Title: React.FC<{
   title: string;
 }> = ({ title }) => {
   return (
-    <Flex justifyContent="center" my={12}>
+    <Flex justifyContent="center" mb={12}>
       <Text fontSize="48px" fontWeight="bold">
         {title}
       </Text>
