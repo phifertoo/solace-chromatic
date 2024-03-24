@@ -38,18 +38,15 @@ const NoteForm: React.FC = () => {
         content: watch("content"),
         userId: currentUser?.id || "",
       };
-      const newUser = await fetchData("http://localhost:3000/api/notes", {
+      const newUser = await fetchData("/api/notes", {
         method: "POST",
         body: notesBody,
       });
 
       //   fetch all posts
-      const response = await fetchData(
-        `http://localhost:3000/api/notes?userId=${currentUser?.id}`,
-        {
-          method: "GET",
-        }
-      );
+      const response = await fetchData(`/api/notes?userId=${currentUser?.id}`, {
+        method: "GET",
+      });
       setValue("content", "");
       formatNoteData(response, setNotes);
       setIsLoading(false);

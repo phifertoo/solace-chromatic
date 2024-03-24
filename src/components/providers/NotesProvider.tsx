@@ -44,7 +44,7 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
       if (currentUser?.id) {
         try {
           const response = await fetchData(
-            `http://localhost:3000/api/notes?userId=${currentUser?.id}`,
+            `/api/notes?userId=${currentUser?.id}`,
             {
               method: "GET",
             }

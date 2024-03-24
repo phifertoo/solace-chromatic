@@ -2,6 +2,10 @@
 
 This project is deployed on Render using their basic service which means there are cold starts. If the page does not respond immediately, please wait for a few seconds. See: https://solace-9c8t.onrender.com/
 
+## Github
+
+The code is stored in a public repo: https://github.com/phifertoo/solace
+
 ## Technology Stack
 
 Typescript: The choice to use TypeScript over JavaScript in the project was driven by the need for enhanced code quality, improved developer productivity, and better scalability.
@@ -77,7 +81,7 @@ yarn
 
 4. Register app to firebase
 
-5. Enable Google Authentication for the project
+5. Enable Google Authentication for the project. To run on production, you will need to authorize the domain for your deployment in firebase (Authentication => Settings => Authorized Domains)
 
 6. Generate a new private key in the Project Settings => Service Accounts
 

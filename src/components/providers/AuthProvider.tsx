@@ -60,12 +60,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         // if no user exists, create user
         try {
           // Attempt to fetch the user's profile
-          const { data } = await fetchData(
-            "http://localhost:3000/api/users/firebase",
-            {
-              method: "GET",
-            }
-          );
+          const { data } = await fetchData("/api/users/firebase", {
+            method: "GET",
+          });
           setCurrentUser(data);
           console.log("User profile:", data);
         } catch (error) {
@@ -79,13 +76,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
               name: user.displayName!,
             };
             try {
-              const newUser = await fetchData(
-                "http://localhost:3000/api/users",
-                {
-                  method: "POST",
-                  body: userData,
-                }
-              );
+              const newUser = await fetchData("/api/users", {
+                method: "POST",
+                body: userData,
+              });
               console.log("New user created:", newUser);
             } catch (creationError) {
               console.error("Failed to create user:", creationError);

@@ -24,12 +24,9 @@ export const fetchData = async (
 };
 
 export const getNotes = async (userId: string) => {
-  const response = await fetchData(
-    `http://localhost:3000/api/notes?userId=${userId}`,
-    {
-      method: "GET",
-    }
-  );
+  const response = await fetchData(`/api/notes?userId=${userId}`, {
+    method: "GET",
+  });
 
   return response;
 };

@@ -14,7 +14,7 @@ const NoteList = () => {
     try {
       removeNote(noteId);
 
-      await fetchData(`http://localhost:3000/api/notes/${noteId}`, {
+      await fetchData(`/api/notes/${noteId}`, {
         method: "DELETE",
       });
 
@@ -37,13 +37,10 @@ const NoteList = () => {
   const onUpdate = async (noteId: string, newContent: string) => {
     try {
       // Call the API to update the note
-      const response = await fetchData(
-        `http://localhost:3000/api/notes/${noteId}`,
-        {
-          method: "PUT",
-          body: { newContent },
-        }
-      );
+      const response = await fetchData(`/api/notes/${noteId}`, {
+        method: "PUT",
+        body: { newContent },
+      });
 
       setNotes((currentNotes: INote[]): INote[] =>
         currentNotes.map((note: INote) =>
