@@ -4,4 +4,5 @@ module.exports = {
     "@babel/preset-typescript",
     "@babel/preset-react", // Add this line
   ],
+  presets: ["next/babel"],
 };
