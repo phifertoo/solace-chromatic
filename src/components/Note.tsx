@@ -8,7 +8,7 @@ import {
   Spacer,
   useDisclosure,
 } from "@chakra-ui/react";
-import { INote } from "@/models/note"; // Ensure the path is correct
+import { INote } from "@/models/note";
 import EditModal from "./EditModal";
 
 export interface NoteProps extends FlexProps {
@@ -40,7 +40,7 @@ export const Note: React.FC<NoteProps> = ({
       {...props}
     >
       <Flex justify="space-between">
-        <Spacer /> {/* Utilize Spacer to push the date to the right */}
+        <Spacer />
         <Text fontSize="sm" color="gray.500">
           {updatedDateTime}
         </Text>
@@ -48,7 +48,6 @@ export const Note: React.FC<NoteProps> = ({
       <Text fontWeight="semibold" my={4}>
         {note.content}
       </Text>{" "}
-      {/* Content in the middle with margin */}
       <Flex justify="space-between">
         <Button colorScheme="red" size="sm" onClick={() => onDelete(note.id)}>
           Delete

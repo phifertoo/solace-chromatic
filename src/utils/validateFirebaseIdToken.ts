@@ -2,7 +2,6 @@ import admin from "./firebaseServer";
 
 interface DecodedToken {
   uid: string;
-  // Add other properties from the decoded token that you might need
 }
 
 interface ValidateResult {

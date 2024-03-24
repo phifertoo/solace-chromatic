@@ -9,7 +9,7 @@ const SearchBar: React.FC = () => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
     setInputValue(newValue);
-    setSearchQuery(newValue); // Update the search query in the context
+    setSearchQuery(newValue);
   };
 
   return (

@@ -26,10 +26,7 @@ describe("Main Component", () => {
 
     const { getByTestId, getByText } = render(<Main />);
 
-    // Assert that loading skeleton is displayed
-    expect(getByTestId("loading-skeleton")).toBeInTheDocument(); // Correct assertion
-
-    // Example: assert that the title is displayed
+    expect(getByTestId("loading-skeleton")).toBeInTheDocument();
     expect(getByText("Lance Watanabe's Notes Project")).toBeInTheDocument();
   });
 });

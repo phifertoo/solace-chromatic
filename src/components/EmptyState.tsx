@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Button, Center } from "@chakra-ui/react";
+import { Text, Center } from "@chakra-ui/react";
 
 const EmptyState = () => {
   return (

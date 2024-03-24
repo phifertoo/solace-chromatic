@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import Note, { NoteProps } from "./Note";
-import { INote } from "@/models/note"; // Make sure to adjust the path as needed
+import { INote } from "@/models/note";
 import "@testing-library/jest-dom";
 
 // Mock EditModal component
@@ -13,7 +13,7 @@ jest.mock("./EditModal", () => ({
 // Sample note data
 const sampleNote: INote = {
   id: "1",
-  userId: "user123", // Add the userId property with a sample value
+  userId: "user123",
   content: "Sample note content",
   updatedAt: "2024-03-25T12:00:00Z", // Assuming updatedAt is in ISO string format
 };

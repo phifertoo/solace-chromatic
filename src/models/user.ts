@@ -3,7 +3,6 @@ export interface UserRequestBody {
   email?: string;
   name?: string;
   userId?: string;
-  // Add other user fields as needed
 }
 
 // Type definition for response data

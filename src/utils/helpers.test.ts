@@ -1,5 +1,4 @@
-// pathToYourFunction.test.ts
-import { isValidContent } from "./helpers"; // Adjust the import path accordingly
+import { isValidContent } from "./helpers";
 
 describe("isValidContent", () => {
   test("returns true for empty string", () => {
@@ -11,22 +10,22 @@ describe("isValidContent", () => {
   });
 
   test("returns false for content of 20 characters", () => {
-    const twentyChars: string = "12345678901234567890"; // exactly 20 characters
+    const twentyChars: string = "12345678901234567890";
     expect(isValidContent(twentyChars)).toBe(false);
   });
 
   test("returns false for content between 20 and 300 characters", () => {
-    const validContent: string = "a".repeat(25); // 25 characters long, which is valid
+    const validContent: string = "a".repeat(25);
     expect(isValidContent(validContent)).toBe(false);
   });
 
   test("returns false for content of 300 characters", () => {
-    const threeHundredChars: string = "a".repeat(300); // exactly 300 characters
+    const threeHundredChars: string = "a".repeat(300);
     expect(isValidContent(threeHundredChars)).toBe(false);
   });
 
   test("returns true for content more than 300 characters", () => {
-    const longContent: string = "a".repeat(301); // 301 characters long, which is invalid
+    const longContent: string = "a".repeat(301);
     expect(isValidContent(longContent)).toBe(true);
   });
 });

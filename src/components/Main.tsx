@@ -11,6 +11,7 @@ import { useAuth } from "./providers/AuthProvider";
 const Main: React.FC = () => {
   const { notes, isLoading } = useNotes();
   const { isLoading: authLoading } = useAuth();
+  console.log(isLoading, authLoading);
 
   return (
     <Box width="100%" maxW="800px" mx="auto" px={4} py={8}>

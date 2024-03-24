@@ -26,7 +26,7 @@ const NoteForm: React.FC = () => {
   const toast = useToast();
 
   const { currentUser } = useAuth();
-  const [isLoading, setIsLoading] = useState(false); // New state to manage loading state
+  const [isLoading, setIsLoading] = useState(false);
   const { setNotes } = useNotes();
 
   const onSubmit = async (values: FormFields) => {
@@ -46,7 +46,6 @@ const NoteForm: React.FC = () => {
       const response = await fetchData(
         `http://localhost:3000/api/notes?userId=${currentUser?.id}`,
         {
-          // Assuming this endpoint accepts POST to fetch notes
           method: "GET",
         }
       );
@@ -67,7 +66,6 @@ const NoteForm: React.FC = () => {
         duration: 1000,
         isClosable: true,
       });
-      console.error("Failed to create user:", creationError);
     }
   };
   return (
@@ -85,9 +83,7 @@ const NoteForm: React.FC = () => {
           size="md"
           mb={4}
           {...register("content", {
-            // required: "Required",
             validate: (value) => {
-              console.log(errors);
               return (
                 (value.length >= 20 && value.length <= 200) ||
                 "Note must be between 20 and 200 characters."

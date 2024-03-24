@@ -44,7 +44,7 @@ export const EditModal: React.FC<EditModalProps> = ({
 
   const onSubmit = handleSubmit(({ content }) => {
     onUpdate(content);
-    onClose(); // Close the modal after updating
+    onClose();
   });
 
   // Reset form with initial content when modal closes or initialContent changes

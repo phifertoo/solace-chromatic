@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import EditModal from "./EditModal"; // Adjust the import path accordingly
+import EditModal from "./EditModal";
 
 describe("EditModal", () => {
   const mockOnClose = jest.fn();

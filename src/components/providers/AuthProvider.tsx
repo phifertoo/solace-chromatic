@@ -1,4 +1,3 @@
-// src/contexts/AuthContext.tsx
 import React, {
   createContext,
   useContext,
@@ -57,8 +56,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const token = await user.getIdToken();
-        localStorage.setItem("userToken", token); // Refresh the token
-        // setUserDisplayName(user.displayName);
+        localStorage.setItem("userToken", token);
         // if no user exists, create user
         try {
           // Attempt to fetch the user's profile
