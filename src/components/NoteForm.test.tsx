@@ -23,7 +23,7 @@ describe("NoteForm Component", () => {
 
     await waitFor(() => {
       expect(
-        getByText("Note must be between 20 and 200 characters.")
+        getByText("Note must be between 20 and 300 characters.")
       ).toBeInTheDocument();
     });
   });

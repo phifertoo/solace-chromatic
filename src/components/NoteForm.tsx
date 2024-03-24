@@ -86,8 +86,8 @@ const NoteForm: React.FC = () => {
                 return "Please sign in";
               }
               return (
-                (value.length >= 20 && value.length <= 200) ||
-                "Note must be between 20 and 200 characters."
+                (value.length >= 20 && value.length <= 300) ||
+                "Note must be between 20 and 300 characters."
               );
             },
           })}

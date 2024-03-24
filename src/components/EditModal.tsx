@@ -70,8 +70,8 @@ export const EditModal: React.FC<EditModalProps> = ({
                   message: "Content must be at least 20 characters",
                 },
                 maxLength: {
-                  value: 200,
-                  message: "Content must be less than 200 characters",
+                  value: 300,
+                  message: "Content must be less than 300 characters",
                 },
               })}
               placeholder="Edit your note here..."

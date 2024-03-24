@@ -20,7 +20,7 @@ const Main: React.FC = () => {
           <Text mt={4} fontSize="lg" lineHeight="tall">
             Thank you for taking the time to check out my Solace Notes project.
             I had a blast completing it! Please SSO google login to start a
-            session. After you login, you can type a note between 20 and 200
+            session. After you login, you can type a note between 20 and 300
             characters in the textarea below. You can also edit, delete a note,
             or search for a string in a note. If you like what you see or have
             any questions, feel free to to{" "}
