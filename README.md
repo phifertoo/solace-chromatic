@@ -1,6 +1,8 @@
-1. Technology Stack
+## Deployment
 
-The project utilizes the following technologies:
+This project is deployed on Render using their basic service which means there are cold starts. If the page does not respond immediately, please wait for a few seconds. See: https://solace-9c8t.onrender.com/
+
+## Technology Stack
 
 Typescript: The choice to use TypeScript over JavaScript in the project was driven by the need for enhanced code quality, improved developer productivity, and better scalability.
 
@@ -10,7 +12,7 @@ Firebase Authentication: Firebase is used for authentication, specifically Googl
 
 Chakra UI: Chakra UI is employed for building the user interface components. It offers a rich set of accessible and customizable UI components, enabling rapid development of aesthetically pleasing interfaces.
 
-2. Folder Structure
+## Folder Structure
 
 The project follows a structured folder organization to maintain clarity and modularity:
 
@@ -18,27 +20,39 @@ components: Contains reusable React components used throughout the application.
 
 pages: Houses backend endpoints with authentication.
 
-providers: Includes context providers for managing application state and providing data to components via React Context API.
+providers: Includes context providers for managing notes and auth state and providing data to components via React Context API.
 
 utils: Stores utility functions and helper modules used across the application. Also contains the Firebase authentication configuration.
 
 models: Defines TypeScript interfaces and types used for data modeling and type safety.
 
-3. Authentication Flow
+## Authentication Flow
 
 Firebase Authentication with Google provider is integrated into the application for user authentication. Users are authenticated using their Google accounts, ensuring a seamless and familiar login experience.
 
-4. State Management
+## State Management
 
-State management is primarily handled using React Context API provided by Next.js. Context providers are utilized to manage global application state and provide data to components where needed. This approach simplifies state management and ensures data consistency throughout the application.
+State management is primarily handled using React Context API provided by Next.js. Context providers are utilized to manage notes and auth state and provide data to components where needed.
 
-5. UI Design
+## UI Design
 
 Chakra UI is chosen for its robust and customizable UI components, allowing for the creation of visually appealing and responsive user interfaces. The design focuses on simplicity, accessibility, and intuitive user experience.
 
-6. Testing Strategy
+## Testing Strategy
 
 The project incorporates unit tests for critical components and functionality using Jest and React Testing Library. Tests are written to ensure the correctness and reliability of application features, enhancing overall code quality and maintainability.
+
+## CRUD Management
+
+When a user creates a new note, all notes are requested to ensure all data is in sync with the backend. Conversely, when a user requests to delete or update a note and the api request is successful, we update the data directly on the front end instead of calling for all the refreshed data. This makes the update appear faster to the user but may cause the data to be out of sync.
+
+## Authentication
+
+When a user signs in through the Google SSO, we check if there is a user with the given email address. If not, we create a new user. If so, we fetch all the notes for the given user.
+
+## Protected Routes
+
+For now, I have not implemented protected routes since there is only 1 page. If we were to scale this project, I would implement protected routes with redirects if the user is not authenticated.
 
 ### Prerequisites
 
@@ -69,7 +83,7 @@ yarn
 
 7. Create a Firestore database
 
-8. Create a .env in the root. Copy the following values into the .env file from firebase.
+8. Create a .env in the root folder. Copy the following values into the .env file from firebase.
 
 REACT_APP_FIREBASE_PRIVATE_KEY
 REACT_APP_FIREBASE_CLIENT_EMAIL
