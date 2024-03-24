@@ -83,6 +83,7 @@ const NoteList = () => {
             onDelete={onDelete}
             mt={i !== 0 ? 4 : 0}
             onUpdate={onUpdate}
+            key={i}
           />
         ))}
     </Box>
