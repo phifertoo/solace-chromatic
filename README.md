@@ -32,7 +32,7 @@ models: Defines TypeScript interfaces and types used for data modeling and type 
 
 ## Authentication Flow
 
-Firebase Authentication with Google provider is integrated into the application for user authentication. Users are authenticated using their Google accounts, ensuring a seamless and familiar login experience.
+Firebase Authentication with Google provider is integrated into the application for user authentication. Users are authenticated using their Google accounts and passing a jwt from the front end that is verified by firebase on the backend. When the user logs in we store the jwt in local storage and when the user logs out, the jwt is removed from local storage.
 
 ## State Management
 
