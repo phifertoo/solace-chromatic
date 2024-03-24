@@ -11,4 +11,5 @@ module.exports = {
     REACT_APP_FIREBASE_MEASUREMENT_ID:
       process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
   },
+  swcMinify: true,
 };
