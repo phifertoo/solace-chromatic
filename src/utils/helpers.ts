@@ -13,5 +13,5 @@ export const formatNoteData = (
       r.updatedAt._seconds * 1000 + r.updatedAt._nanoseconds / 1000000
     );
   });
-  setNotes(response);
+  setNotes(response.sort((a: any, b: any) => b.updatedAt - a.updatedAt));
 };

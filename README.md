@@ -106,3 +106,4 @@ REACT_APP_FIREBASE_MEASUREMENT_ID
 yarn dev
 
 10. To run test files, enable the babel.config.js file by removing the "disabled" from the file name. Then run yarn test <filename>
+    Test12345678!

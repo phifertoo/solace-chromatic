@@ -44,11 +44,11 @@ const NoteForm: React.FC = () => {
       });
 
       //   fetch all posts
-      const response = await fetchData(`/api/notes?userId=${currentUser?.id}`, {
+      const response = await fetchData(`/api/users/${currentUser?.id}/notes`, {
         method: "GET",
       });
       setValue("content", "");
-      formatNoteData(response, setNotes);
+      formatNoteData(response.notes, setNotes);
       setIsLoading(false);
       toast({
         title: "Note Created Successfully!",

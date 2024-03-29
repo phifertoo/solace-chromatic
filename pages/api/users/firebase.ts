@@ -10,6 +10,7 @@ export default async function handler(
   res: NextApiResponse<UserResponseData>
 ) {
   try {
+    // getting the user data based on the firebaseId
     const firebaseId = await authenticate(req);
 
     switch (req.method) {

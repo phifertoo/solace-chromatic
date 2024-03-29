@@ -38,22 +38,22 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         return res.status(500).json({ message: "Failed to add note." });
       }
 
-    case "GET":
-      try {
-        const userId = req.query.userId as string;
-        const querySnapshot = await db
-          .collection("notes")
-          .where("userId", "==", userId)
-          .get();
-        const notes = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        return res.status(200).json(notes);
-      } catch (error) {
-        console.error("Failed to get notes", error);
-        return res.status(500).json({ message: "Failed to get notes." });
-      }
+    // case "GET":
+    //   try {
+    //     const userId = req.query.userId as string;
+    //     const querySnapshot = await db
+    //       .collection("notes")
+    //       .where("userId", "==", userId)
+    //       .get();
+    //     const notes = querySnapshot.docs.map((doc) => ({
+    //       id: doc.id,
+    //       ...doc.data(),
+    //     }));
+    //     return res.status(200).json(notes);
+    //   } catch (error) {
+    //     console.error("Failed to get notes", error);
+    //     return res.status(500).json({ message: "Failed to get notes." });
+    //   }
 
     default:
       res.setHeader("Allow", ["GET", "POST", "PUT", "DELETE"]);

@@ -44,13 +44,15 @@ export const NotesProvider: React.FC<NotesProviderProps> = ({ children }) => {
       if (currentUser?.id) {
         try {
           const response = await fetchData(
-            `/api/notes?userId=${currentUser?.id}`,
+            `/api/users/${currentUser?.id}/notes`,
             {
               method: "GET",
             }
           );
-          formatNoteData(response, setNotes);
+
+          formatNoteData(response.notes, setNotes);
         } catch (err) {
+          console.error("Error fetching notes:", err);
           if (err instanceof Error) setError(err);
         }
       }
