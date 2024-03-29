@@ -1,11 +1,9 @@
-// Type definition for request body
 export interface UserRequestBody {
   email?: string;
   name?: string;
   userId?: string;
 }
 
-// Type definition for response data
 export interface UserResponseData {
   id?: string;
   message?: string;

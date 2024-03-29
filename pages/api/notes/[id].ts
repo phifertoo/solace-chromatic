@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import admin from "../../../src/utils/firebaseServer"; // Adjust the import path as necessary
+import admin from "../../../src/utils/firebaseServer";
 
 const db = admin.firestore();
 
