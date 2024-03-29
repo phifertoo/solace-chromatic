@@ -1,18 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import admin from "@/utils/firebaseServer";
 import { authenticate } from "@/utils/authMiddleware";
-
-// Assuming the structure of a note for TypeScript typing
-interface Note {
-  id: string;
-  content: string;
-  updatedAt: Date;
-}
+import { INote } from "@/models/note";
 
 // Adjust the response type according to what you expect to return
 type Data = {
   message?: string;
-  notes?: Note[];
+  notes?: INote[];
 };
 
 const db = admin.firestore();
@@ -26,7 +20,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
-  // Process only GET requests, as per the new file's purpose
   if (req.method === "GET") {
     const { userId } = req.query;
 
@@ -43,7 +36,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       const notes = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-      })) as Note[];
+      })) as INote[];
 
       return res.status(200).json({ notes });
     } catch (error) {

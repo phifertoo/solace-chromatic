@@ -50,7 +50,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     // This listens for changes to the auth state (e.g., user logs in or out)
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setIsLoading(true);
-
       if (user) {
         setAuthUser(user);
         // User is signed in, see docs for a list of available properties

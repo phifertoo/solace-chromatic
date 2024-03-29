@@ -14,8 +14,7 @@ export default async function handler(
   try {
     await authenticate(req);
 
-    // Extract the user ID from the URL
-    const { id: userId } = req.query;
+    const { userId } = req.query;
 
     if (!userId || typeof userId !== "string") {
       return res.status(400).json({ message: "Invalid user ID." });
