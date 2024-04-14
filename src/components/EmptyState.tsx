@@ -5,7 +5,7 @@ const EmptyState = () => {
   return (
     <Center flexDirection="column" mt="20">
       <Text fontSize="lg" mb="4">
-        You have no notes yet. 041424. Create your first note below!
+        aaa. You have no notes yet. Create your first note below!
       </Text>
     </Center>
   );
